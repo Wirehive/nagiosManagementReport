@@ -1,5 +1,7 @@
 #!/bin/bash
 
+###START CUSTOMISING#############
+
 FROM="nagios@company.com"
 DESTINATIONS="salesteam.company.com"
 
@@ -8,12 +10,14 @@ NAGIOSCGI="http://monitoring.company.com/nagios/cgi-bin/summary.cgi?report=1&dis
 USERNAME="nagiosuser"
 PASSWORD="nagiospass"
 
+#Used to make links in the email work
+FIXUPREGEX="s/extinfo.cgi/http:\/\/monitoring.company.com\/nagios\/cgi-bin\/extinfo.cgi/g"
+
+###END CUSTOMISING###############
+
 DAILYPERIOD="last24hours"
 WEEKLYPERIOD="last7days"
 MONTHLYPERIOD="last31days"
-
-#Used to make links in the email work
-FIXUPREGEX="s/extinfo.cgi/http:\/\/monitoring.company.com\/nagios\/cgi-bin\/extinfo.cgi/g"
 
 #Used to make HTML email render correctly
 CONTENTTYPE="Content-Type: text/html"
